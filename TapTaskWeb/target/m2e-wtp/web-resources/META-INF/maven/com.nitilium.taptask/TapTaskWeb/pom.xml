@@ -2,26 +2,39 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.nitilium.taptask</groupId>
+
+    <parent>
+        <artifactId>TapTask</artifactId>
+        <groupId>com.nitilium.taptask</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <artifactId>TapTaskWeb</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>TapTaskWeb</name>
 
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.version>1.0-SNAPSHOT</project.version>
-        <spring.version>2.5.6</spring.version>
-        <junit.version>4.10</junit.version>
-        <concordion.version>1.4.3</concordion.version>
-        <mockito.version>1.8.4</mockito.version>
 
+
+    <properties>
         <tapestry-release-version>5.3.7</tapestry-release-version>
         <servlet-api-release-version>2.5</servlet-api-release-version>
     </properties>
 
     <dependencies>
+        <!-- Other modules. -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>TapTaskCore</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>TapTaskBusiness</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
 
         <!-- Libraries. -->
         <dependency>
@@ -59,16 +72,7 @@
     </dependencies>
 
    <build>
-        <finalName>${project.artifactId}</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
