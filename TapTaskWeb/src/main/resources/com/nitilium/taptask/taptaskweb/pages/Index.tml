@@ -1,0 +1,9 @@
+<html t:type="layout" title="Index"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+
+    <p>
+    	The begins ...
+    </p>
+
+</html>
