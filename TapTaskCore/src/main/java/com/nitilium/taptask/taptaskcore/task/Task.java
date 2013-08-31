@@ -29,9 +29,11 @@ public class Task {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	@Column(nullable = false)
 	private String title;
 
 	@Temporal(TemporalType.TIME)
+	@Column(nullable = false)
 	private Date creationDate;
 
 	@Temporal(TemporalType.TIME)
@@ -39,96 +41,142 @@ public class Task {
 
 	private String description;
 
+	@Column(nullable = false)
 	private boolean checked;
 
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	public Task() {
+
+	}
+
+	public Task(final String title, final Date creationDate,
+			final Date taskDate, final String description,
+			final TaskLevelEnum taskLevel) {
+		super();
+		this.title = title;
+		this.creationDate = creationDate;
+		this.taskDate = taskDate;
+		this.description = description;
+		this.taskLevel = taskLevel;
+	}
+
 	/**
-	 * @return the id of the task.
+	 * Getter of the id
+	 * 
+	 * @return the id
 	 */
 	public long getId() {
 		return id;
 	}
 
 	/**
+	 * Setter of the id.
+	 * 
 	 * @param id
-	 *            the id to set.
+	 *            the id to set
 	 */
-	public void setId(long id) {
+	public void setId(final long id) {
 		this.id = id;
 	}
 
 	/**
-	 * @return the title of the task.
+	 * Getter of the title
+	 * 
+	 * @return the title
 	 */
 	public String getTitle() {
 		return title;
 	}
 
 	/**
+	 * Setter of the title.
+	 * 
 	 * @param title
-	 *            the title to set.
+	 *            the title to set
 	 */
-	public void setTitle(String title) {
+	public void setTitle(final String title) {
 		this.title = title;
 	}
 
 	/**
-	 * @return the creationDate date of creationb of the task.
+	 * Getter of the creationDate
+	 * 
+	 * @return the creationDate
 	 */
 	public Date getCreationDate() {
 		return creationDate;
 	}
 
 	/**
+	 * Setter of the creationDate.
+	 * 
 	 * @param creationDate
-	 *            the creationDate to set.
+	 *            the creationDate to set
 	 */
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(final Date creationDate) {
 		this.creationDate = creationDate;
 	}
 
 	/**
-	 * @return the taskDate when the task will be done.
+	 * Getter of the taskDate
+	 * 
+	 * @return the taskDate
 	 */
 	public Date getTaskDate() {
 		return taskDate;
 	}
 
 	/**
+	 * Setter of the taskDate.
+	 * 
 	 * @param taskDate
-	 *            the taskDate to set.
+	 *            the taskDate to set
 	 */
-	public void setTaskDate(Date taskDate) {
+	public void setTaskDate(final Date taskDate) {
 		this.taskDate = taskDate;
 	}
 
 	/**
-	 * @return the description of the task.
+	 * Getter of the description
+	 * 
+	 * @return the description
 	 */
 	public String getDescription() {
 		return description;
 	}
 
 	/**
+	 * Setter of the description.
+	 * 
 	 * @param description
-	 *            the description to set.
+	 *            the description to set
 	 */
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 
 	/**
-	 * @return the checked true if the task is done.
+	 * Getter of the checked
+	 * 
+	 * @return the checked
 	 */
 	public boolean isChecked() {
 		return checked;
 	}
 
 	/**
+	 * Setter of the checked.
+	 * 
 	 * @param checked
-	 *            the checked to set.
+	 *            the checked to set
 	 */
-	public void setChecked(boolean checked) {
+	public void setChecked(final boolean checked) {
 		this.checked = checked;
 	}
 
+	 * 
+	 * @return the taskLevel
+	 * Setter of the taskLevel.
+	 * 
 }

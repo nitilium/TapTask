@@ -8,10 +8,13 @@
 		<groupId>com.nitilium.taptask</groupId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-
-	<artifactId>TapTaskDao</artifactId>
+	
 	<packaging>jar</packaging>
-	<name>TapTaskDao</name>
+	<groupId>com.nitilium.taptask</groupId>
+	<artifactId>TapTaskDao</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<name>${project.artifactId}</name>
+	<description>Dao of the application.</description>
 
 	<dependencies>
 		<!-- Other modules. -->
@@ -28,5 +31,7 @@
 			<version>4.2.2.Final</version>
 		</dependency> -->
 	</dependencies>
+     
+     
 
 </project>

@@ -1,10 +1,11 @@
 *.class
+derby.log
 
 # Package Files #
 *.jar
 *.war
 *.ear
 .classpath
+.settings/
 .project
-target
-target/*
+*/target/**
