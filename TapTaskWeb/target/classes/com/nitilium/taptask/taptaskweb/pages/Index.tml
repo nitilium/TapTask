@@ -5,5 +5,15 @@
     <p>
     	The begins ...
     </p>
-
+    
+   
+    
+    <t:form t:id="form">
+    	<t:errors/>
+    	<input t:type="textField" t:name="name" t:value="name" />
+    	 <t:MaList t:id="maList"  ></t:MaList>
+    	<input t:type="submit" />
+    </t:form>
+    
+    
 </html>

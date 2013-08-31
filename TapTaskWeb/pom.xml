@@ -17,8 +17,7 @@
 	<properties>
 		<tapestry-release-version>5.3.7</tapestry-release-version>
 		<servlet-api-release-version>2.5</servlet-api-release-version>
-		<testng-release-version>5.14.10</testng-release-version>
-		<easymock-release-version>3.0</easymock-release-version>
+		<hsqldb-release-version>2.2.9</hsqldb-release-version>
 	</properties>
 
 
@@ -63,19 +62,6 @@
 			plugin (which runs the tests) will fail, preventing Maven from packaging 
 			the WAR. Tapestry includes a large number of testing facilities designed 
 			for use with TestNG (http://testng.org/), so it's recommended. -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>${testng-release-version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>${easymock-release-version}</version>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.apache.tapestry</groupId>
@@ -102,6 +88,12 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- Database -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb-release-version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>taptask</finalName>

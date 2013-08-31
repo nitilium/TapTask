@@ -2,21 +2,44 @@ package com.nitilium.taptask.taptaskcore.task;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@NamedQueries(value = {
+
+		@NamedQuery(name = "getAllTask", query = "SELECT t FROM Task t")
+
+})
+
+
+@Entity
+@Table(name = "task")
 public class Task {
 
+	@Id
+	@Column(name = "taskId", nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	private String title;
 
+	@Temporal(TemporalType.TIME)
 	private Date creationDate;
 
+	@Temporal(TemporalType.TIME)
 	private Date taskDate;
 
 	private String description;
 
 	private boolean checked;
-
-	private TaskLevelEnum taskLevel;
 
 	/**
 	 * @return the id of the task.
@@ -106,21 +129,6 @@ public class Task {
 	 */
 	public void setChecked(boolean checked) {
 		this.checked = checked;
-	}
-
-	/**
-	 * @return the taskLevel the level of the task.
-	 */
-	public TaskLevelEnum getTaskLevel() {
-		return taskLevel;
-	}
-
-	/**
-	 * @param taskLevel
-	 *            the taskLevel to set.
-	 */
-	public void setTaskLevel(TaskLevelEnum taskLevel) {
-		this.taskLevel = taskLevel;
 	}
 
 }
